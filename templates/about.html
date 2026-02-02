@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+
+<h1>About Wide Mind Tutorials</h1>
+
+<div class="message-box">
+  <p>
+    <strong>Wide Mind Tutorials</strong> is an academic learning platform created to make
+    <strong>quality university education clearer, easier, and more accessible</strong> for students.
+  </p>
+</div>
+
+<div class="message-box">
+  <h2>Our Story</h2>
+
+  <p>
+    Wide Mind Tutorials began <strong>unofficially in 2022</strong> as a small academic support
+    initiative for students seeking clearer explanations beyond the lecture hall.
+  </p>
+
+  <p>
+    Due to consistency, results, and student feedback, the tutorial was formally launched in
+    <strong>2024</strong>. In <strong>2026</strong>, it evolved into a fully integrated
+    <strong>online learning platform</strong> to improve access, structure, and flexibility.
+  </p>
+</div>
+
+<div class="message-box">
+  <h2>Our Focus</h2>
+
+  <p>
+    At Wide Mind Tutorials, we believe that <strong>understanding is the foundation of academic success</strong>.
+    Our focus is on simplifying complex academic concepts and presenting official school materials
+    in a way students can truly understand and apply.
+  </p>
+
+  <ul>
+    <li>Clear and simplified academic explanations</li>
+    <li>Well-structured, summarized notes</li>
+    <li>Recorded explanations for flexible learning</li>
+    <li>Focused preparation for tests and examinations</li>
+  </ul>
+</div>
+
+<div class="message-box">
+  <h2>Who We Serve</h2>
+
+  <p>
+    Wide Mind Tutorials currently serves <strong>UI DLC Psychology students</strong>.
+    All materials are carefully aligned with official course outlines to ensure relevance,
+    accuracy, and academic integrity.
+  </p>
+</div>
+
+<div class="message-box">
+  <h2>The Tutor</h2>
+
+  <img src="{{ url_for('static', filename='images/tutor.png') }}"
+     alt="Mr. Oluwasegun OREOTAN"
+     class="hero-image"
+     draggable="false"
+     oncontextmenu="return false;">
+
+  <p>
+    Wide Mind Tutorials is facilitated by <strong>Mr. Oluwasegun OREOTAN Samuel</strong>,
+    an <strong>Educational Psychologist</strong>, an <strong>Educator</strong>, and a
+    digitally inclined academic mentor.
+  </p>
+
+  <blockquote>
+    “Understanding is key to academic success.”
+  </blockquote>
+
+  <p>
+    His teaching approach focuses on transforming official school materials into
+    <strong>easy-to-understand summaries</strong>, supported by
+    <strong>clear and structured recorded explanations</strong>.
+  </p>
+</div>
+
+<div class="message-box">
+  <h2>Student Experiences</h2>
+
+  <p>
+    Over the years, students have reported improved understanding, stronger confidence,
+    and better academic performance through Wide Mind Tutorials.
+  </p>
+
+  <img src="{{ url_for('static', filename='images/pic1.png') }}"
+     alt="Students Feedback"
+     class="hero-image"
+     draggable="false"
+     oncontextmenu="return false;">
+
+  <img src="{{ url_for('static', filename='images/pic2.png') }}"
+     alt="Students Feedback"
+     class="hero-image"
+     draggable="false"
+     oncontextmenu="return false;">
+</div>
+
+{% endblock %}

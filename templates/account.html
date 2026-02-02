@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Account | Wide Mind Tutorials{% endblock %}
+
+{% block content %}
+<section class="account-section">
+
+    <!-- USER INFO -->
+    <div class="account-box">
+        <img src="/static/images/avatar.png" alt="Profile Avatar" class="profile-avatar">
+
+        <h2 id="username">Loading...</h2>
+        <p>Department: <span id="department">Loading...</span></p>
+        <p>Level: <span id="level">Loading...</span></p>
+
+        <p>
+            Payment Status: <strong id="payment-status">Checking...</strong>
+        </p>
+
+        <!-- PAY BUTTON -->
+        <button type="button" id="pay-btn" class="btn-pay-now">
+            Pay Now 💳
+        </button>
+    </div>
+
+    <!-- COURSES -->
+    <div class="courses-box">
+        <h3>Your Courses</h3>
+        <ul id="courses">
+            <li>Loading courses...</li>
+        </ul>
+    </div>
+
+    <!-- LOGOUT -->
+    <button id="logout-btn" class="btn">Logout</button>
+
+</section>
+
+<!-- TOAST -->
+<div id="toast" class="toast"></div>
+
+<style>
+/* ========================== PAID ANIMATION ========================== */
+.paid-animate {
+    animation: pop 0.6s ease-out;
+    color: green;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.6); opacity: 0; }
+    70% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+</style>
+
+<script src="/static/js/account.js"></script>
+{% endblock %}
