@@ -343,15 +343,48 @@ main.content,
     text-align: center;
 }
 
-/* Optional: adapt to dark theme */
-[data-theme="dark"] .password-wrapper input {
-    color: #eee;
-    background-color: rgba(20, 20, 20, 0.9);
-    border: 1px solid #555;
+/* ========================== PASSWORD FIELD WRAPPER – DARK THEME ========================== */
+[data-theme="dark"] .password-wrapper {
+    position: relative;
+    width: 100%;
 }
 
+/* Input padding to make room for the toggle icon */
+[data-theme="dark"] .password-wrapper input {
+    width: 100%;
+    padding-right: 40px; /* space for the icon */
+    box-sizing: border-box;
+    color: #eee; /* text color for dark theme */
+    background-color: rgba(20, 20, 20, 0.9); /* dark input background */
+    border: 1px solid #555; /* subtle border */
+    border-radius: 5px; /* optional rounding */
+}
+
+/* Toggle password icon */
 [data-theme="dark"] .toggle-password-icon {
-    filter: brightness(0.9); /* subtle dim in dark mode */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    user-select: none;
+    transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+    opacity: 0.85;
+    filter: brightness(0.9); /* dim slightly in dark mode */
+}
+
+/* Hover / active effects for better UX */
+[data-theme="dark"] .toggle-password-icon:hover {
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
+    filter: brightness(1); /* brighten on hover */
+}
+
+[data-theme="dark"] .toggle-password-icon:active {
+    transform: translateY(-50%) scale(1.05);
+    filter: brightness(1);
 }
 /* ===================== HERO / HEADER POP & PRESENCE ===================== */
 [data-theme="dark"] .admin-dashboard .dashboard-title,
