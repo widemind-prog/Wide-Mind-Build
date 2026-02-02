@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+
     // -----------------------------
     // LOGIN FORM SUBMISSION
     // -----------------------------
     const loginForm = document.getElementById("login-form");
+
     if (loginForm) {
         loginForm.addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -10,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const res = await fetch("/api/auth/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                credentials: "include",   // 🔥 ensures cookies/session are sent
+                credentials: "include",
                 body: JSON.stringify({
                     email: loginForm.email.value,
                     password: loginForm.password.value
@@ -28,19 +30,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const pwdInput = document.getElementById("password");
+    // -----------------------------
+    // PASSWORD VISIBILITY TOGGLE
+    // -----------------------------
+    const passwordInput = document.getElementById("password");
     const toggleIcon = document.querySelector(".toggle-password-icon");
 
+    if (!passwordInput || !toggleIcon) return;
+
     toggleIcon.addEventListener("click", () => {
-        if (pwdInput.type === "password") {
-            pwdInput.type = "text";
-            toggleIcon.classList.remove("fa-eye");
-            toggleIcon.classList.add("fa-eye-slash");
-        } else {
-            pwdInput.type = "password";
-            toggleIcon.classList.remove("fa-eye-slash");
-            toggleIcon.classList.add("fa-eye");
-        }
+        const isHidden = passwordInput.type === "password";
+
+        passwordInput.type = isHidden ? "text" : "password";
+
+        toggleIcon.classList.toggle("fa-eye", !isHidden);
+        toggleIcon.classList.toggle("fa-eye-slash", isHidden);
     });
+
 });
