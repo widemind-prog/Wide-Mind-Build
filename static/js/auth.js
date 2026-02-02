@@ -28,27 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // -----------------------------
-    // SHOW / HIDE PASSWORD
-    // -----------------------------
-    const togglePasswordIcons = document.querySelectorAll(".toggle-password");
+document.addEventListener("DOMContentLoaded", () => {
+    const pwdInput = document.getElementById("password");
+    const toggleIcon = document.querySelector(".toggle-password-icon");
 
-    togglePasswordIcons.forEach(icon => {
-        const input = icon.previousElementSibling; // assumes <img> comes right after input
-
-        icon.addEventListener("click", () => {
-            if (input.type === "password") {
-                input.type = "text";
-            } else {
-                input.type = "password";
-            }
-        });
-
-        // Optional: swap PNG for "open/closed" eye variant
-        // Example:
-        // icon.addEventListener("click", () => {
-        //     input.type = input.type === "password" ? "text" : "password";
-        //     icon.src = input.type === "password" ? "/static/images/eye-skeleton.png" : "/static/images/eye-open.png";
-        // });
+    toggleIcon.addEventListener("click", () => {
+        if (pwdInput.type === "password") {
+            pwdInput.type = "text";
+            toggleIcon.classList.remove("fa-eye");
+            toggleIcon.classList.add("fa-eye-slash");
+        } else {
+            pwdInput.type = "password";
+            toggleIcon.classList.remove("fa-eye-slash");
+            toggleIcon.classList.add("fa-eye");
+        }
     });
 });

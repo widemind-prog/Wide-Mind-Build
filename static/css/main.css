@@ -340,49 +340,27 @@ main.content,
     }
 }
 
-/* ========================== PASSWORD FIELD WRAPPER ========================== */
-.password-wrapper {
-    position: relative;
-    width: 100%;
-    display: inline-block;
-}
-
-/* Input padding to make room for the toggle icon */
-.password-wrapper input {
-    width: 100%;
-    padding-right: 45px; /* extra space for the icon */
-    box-sizing: border-box;
-}
-
-/* Toggle password icon (PNG/SVG) */
-.toggle-password-icon {
+.password-wrapper .toggle-password-icon {
     position: absolute;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    width: 22px;       /* icon size */
-    height: 22px;
-    user-select: none;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    font-size: 18px; /* adjust size */
+    color: #555;     /* light theme default */
     opacity: 0.85;
+    transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease;
 }
 
-/* Hover / active effects for better UX */
+[data-theme="dark"] .toggle-password-icon {
+    color: #eee;
+    opacity: 0.9;
+}
+
 .toggle-password-icon:hover {
-    transform: translateY(-50%) scale(1.15);
+    transform: translateY(-50%) scale(1.1);
     opacity: 1;
 }
-
-.toggle-password-icon:active {
-    transform: translateY(-50%) scale(1.05);
-}
-
-/* Optional: add focus effect to input when toggle icon is hovered */
-.password-wrapper input:focus {
-    outline: 2px solid #4a90e2; /* example blue focus ring */
-}
-
 /* ========================== GLOBAL BUTTONS (except CTA) ========================== */
 button, .btn {
     background: linear-gradient(135deg, #d4af37, #f1e5ac, #b8962e);
